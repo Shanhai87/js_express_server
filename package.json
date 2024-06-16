@@ -1,0 +1,19 @@
+{
+  "name": "server_express",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index"
+  },
+  "keywords": ["javascript", "postgres", "express", "ejs", "vue"],
+  "author": "lpuddy",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "pg": "^8.12.0"
+  }
+}

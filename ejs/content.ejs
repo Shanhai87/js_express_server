@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head"); %>
+</head>
+<body>
+    <%- include("./partials/navbar"); %>
+    <div class="container">
+        <h1><%= title %></h1>
+
+        <div id="app">
+            <form @submit.prevents="create">
+                <div class="mb-3">
+                    <label for="userName">Create new user:</label>
+                    <input class="form-control" id="userName" type="text" v-model="name" placeholder="Enter name">
+                    <input class="form-control" type="number" v-model="age" placeholder="Enter age">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+            <div class="spinner-border" role="status" v-if="users.length === 0">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            
+            <ul class="list-group" v-else>
+                <!-- <li class="list-group-item" v-for="user in users" @click="delete(user.id)"> -->
+                <li class="list-group-item" v-for="user in users">
+                    <font style=" font-family: 'arial'; font-size: 20px; color: #313abd; letter-spacing: 1px; word-spacing: 5px;">
+                        id: <strong>{{ user.id }}</strong>&nbsp;&nbsp;
+                        name: <strong>{{ user.name }}</strong>&nbsp;&nbsp;
+                        age: <strong>{{ user.age }}</strong>&nbsp;&nbsp;
+                        <a v-bind:href="`/content/${user.id}`">link</a>
+                    </font>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- <script src="https://unpkg.com/vue"></script> -->
+    <script src="https://unpkg.com/vue@3.1.1/dist/vue.global.prod.js"></script>
+    <script src="/app.js"></script>
+</body>
+</html>

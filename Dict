@@ -1,0 +1,26 @@
+npm init -y // создает файл package.json
+
+npm install pg // установить node-postgres
+
+npm install express // устанавливает express
+
+добавить в package.json строчку для импорта
+    "type": "module",
+
+команда запуска скрипта в powershell с установленной переменной окруженния:
+    $env:PORT = 3000; node index
+
+установить nodemon для использования в режиме разработки
+    npm install -D nodemon
+
+добавить в package.json скрипты
+    "start": "node index",
+    "debug": "nodemon index"
+
+запускать скрипты командами
+    npm run start
+и
+    npm run debug
+
+установить ejs
+    npm i ejs
